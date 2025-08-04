@@ -1,18 +1,8 @@
-#### Tableau Next Integration
-```python
-# Tableau agentic analytics integration with Agentforce
-tableau_config = {
-    "endpoint": "https://your-server.tableau.com/api/agents",
-    "capabilities": ["visualization_generation", "dashboard_creation"],
-    "agentforce_integration": True,
-    "data_cloud_connection": True,
-    "slack_integration": True
-}
-```# Agentic AI Multi-Agent Solution: Technical Architecture Document
+# Agentic AI Multi-Agent Solution: Technical Architecture Document
 
 ## Executive Summary
 
-This document outlines a comprehensive agentic AI solution that serves as an intelligent orchestration layer above your existing data infrastructure including Snowflake, Tableau, ADP, Workday, and Veeva. The solution employs a multi-agent architecture where specialized AI agents collaborate to provide conversational access to enterprise data and automate complex workflows.
+This document outlines a comprehensive agentic AI solution that serves as an intelligent orchestration layer above your existing data infrastructure including Salesforce Data Cloud, Tableau, ADP, Workday, and Veeva. The solution employs a multi-agent architecture where specialized AI agents collaborate to provide conversational access to enterprise data and automate complex workflows.
 
 ## 1. Business Problem & Solution Overview
 
@@ -42,7 +32,7 @@ A conversational AI platform powered by multiple specialized agents that can:
 ### 2.1 Core Components
 
 #### Orchestrator Agent (Central Hub)
-- **Technology**: LangGraph-based state machine or AWS Multi-Agent Orchestrator
+- **Technology**: Salesforce Agentforce Platform with Atlas Reasoning Engine
 - **Function**: Routes user queries to appropriate specialized agents
 - **Key Features**: 
   - Intent classification using LLMs (Claude 3.5 Sonnet, GPT-4o)
@@ -254,6 +244,18 @@ data_cloud_config = {
 }
 ```
 
+#### Tableau Next Integration
+```python
+# Tableau agentic analytics integration with Agentforce
+tableau_config = {
+    "endpoint": "https://your-server.tableau.com/api/agents",
+    "capabilities": ["visualization_generation", "dashboard_creation"],
+    "agentforce_integration": True,
+    "data_cloud_connection": True,
+    "slack_integration": True
+}
+```
+
 ### 3.3 Multi-Agent Orchestration Patterns
 
 #### Pattern 1: Sequential Workflow
@@ -265,7 +267,7 @@ User Query → Intent Analysis → Data Agent → Visualization Agent → Respon
 ```
 User Query → Intent Analysis → ┌─ HR Agent (Workday)
                               ├─ Payroll Agent (ADP)  → Synthesis Agent → Response
-                              └─ Analytics Agent (Snowflake)
+                              └─ Analytics Agent (Salesforce Data Cloud)
 ```
 
 #### Pattern 3: Hierarchical Delegation
@@ -347,8 +349,6 @@ class AgentforceConfidenceEngine:
 - **Regulatory submission support**: Automated document compilation and validation
 - **Real-world evidence analysis**: Treatment effectiveness and outcome correlation
 - **Genomic data integration**: Multi-modal analysis of genetic and clinical data
-
-
 
 ## 5. Success Metrics
 
